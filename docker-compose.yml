@@ -3,8 +3,8 @@ version: '3.8'
 services:
   php:
     build:
-      context: .
-      dockerfile: docker/php/Dockerfile
+      context: ./docker/php
+      dockerfile: Dockerfile
     container_name: php-container
     ports:
       - "8000:80"
@@ -12,11 +12,17 @@ services:
       - ./public:/var/www/html
     depends_on:
       - mysql
+    environment:
+      DATABASE_HOST: mainline.proxy.rlwy.net
+      DATABASE_USER: root
+      DATABASE_PASSWORD: edSrffrYiYSGtyMyBpOXXYVcPZriYrPo
+      DATABASE_NAME: railway
+      DATABASE_PORT: "49816"
 
   mysql:
     build:
-      context: .
-      dockerfile: docker/mysql/Dockerfile
+      context: ./docker/mysql
+      dockerfile: Dockerfile
     container_name: mysql-container
     restart: always
     environment:
