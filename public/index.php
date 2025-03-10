@@ -1,14 +1,17 @@
 <?php
-$servername = "mysql"; 
-$username = "root";
-$password = "rootpassword";
-$database = "mydatabase";
+$host = getenv("DATABASE_HOST");
+$user = getenv("DATABASE_USER");
+$pass = getenv("DATABASE_PASSWORD");
+$dbname = getenv("DATABASE_NAME");
+$port = getenv("DATABASE_PORT");
 
-$conn = new mysqli($servername, $username, $password, $database);
+// Create connection
+$conn = new mysqli($host, $user, $pass, $dbname, $port);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-echo "<h2>Connected to MySQL successfully!</h2>";
+echo "✅ Database connected successfully!";
 ?>
