@@ -13,11 +13,11 @@ services:
     depends_on:
       - mysql
     environment:
-      DATABASE_HOST: mainline.proxy.rlwy.net
+      DATABASE_HOST: // your database host link
       DATABASE_USER: root
-      DATABASE_PASSWORD: edSrffrYiYSGtyMyBpOXXYVcPZriYrPo
-      DATABASE_NAME: railway
-      DATABASE_PORT: "49816"
+      DATABASE_PASSWORD: // your pass
+      DATABASE_NAME: // your db name
+      DATABASE_PORT: // port number
 
   mysql:
     build:
