@@ -1,9 +1,9 @@
 <?php
-$host = getenv("DATABASE_HOST") ?: "mainline.proxy.rlwy.net";
-$user = getenv("DATABASE_USER") ?: "root";
-$pass = getenv("DATABASE_PASSWORD") ?: "edSrffrYiYSGtyMyBpOXXYVcPZriYrPo";
-$dbname = getenv("DATABASE_NAME") ?: "railway";
-$port = getenv("DATABASE_PORT") ?: "49816";
+$host = getenv("DATABASE_HOST")
+$user = getenv("DATABASE_USER") 
+$pass = getenv("DATABASE_PASSWORD") 
+$dbname = getenv("DATABASE_NAME") 
+$port = getenv("DATABASE_PORT")
 
 // Create connection
 $conn = new mysqli($host, $user, $pass, $dbname, (int)$port);
